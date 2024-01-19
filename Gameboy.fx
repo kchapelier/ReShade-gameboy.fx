@@ -35,10 +35,16 @@ uniform int PixelSize <
 
 #include "ReShade.fxh"
 
-static float3 color1 = float3(8.0f / 255.f, 25.f / 255.f, 32.f / 255.f);
-static float3 color2 = float3(50.f / 255.f, 106.f / 255.f, 79.f / 255.f);
-static float3 color3 = float3(137.f / 255.f, 192.f / 255.f, 111.f / 255.f);
-static float3 color4 = float3(223.f / 255.f, 246.f / 255.f, 208.f / 255.f);
+#include "ReShadeUI.fxh"
+
+uniform float3 color1 < __UNIFORM_COLOR_FLOAT3
+> = float3(8.0f / 255.f, 25.f / 255.f, 32.f / 255.f);
+uniform float3 color2 < __UNIFORM_COLOR_FLOAT3
+> = float3(50.f / 255.f, 106.f / 255.f, 79.f / 255.f);
+uniform float3 color3 < __UNIFORM_COLOR_FLOAT3
+> = float3(137.f / 255.f, 192.f / 255.f, 111.f / 255.f);
+uniform float3 color4 < __UNIFORM_COLOR_FLOAT3
+> = float3(223.f / 255.f, 246.f / 255.f, 208.f / 255.f);
 
 float3 GameboyPass(float4 vois : SV_Position, float2 texcoord : TexCoord) : SV_Target
 {
